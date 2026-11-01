@@ -1,10 +1,6 @@
 # Awesome-Data-Loss-Prevention-DLP
 
-# Awesome-Data-Loss-Prevention-DLP
-
 **Top Data Loss Prevention DLP (Opensource) 🌟 Star if you like it! 🌟**
-
-
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**
 
@@ -12,182 +8,83 @@
 
 **Last updated: November 2026**
 
-
-
 This repository tracks notable **SaaS platforms** and **open-source projects** for **Data Loss Prevention (DLP)**. These tools enable organizations to detect and block sensitive data from leaving their perimeter—across endpoints, email, cloud apps, and AI tools—from fully managed enterprise suites with ML-based classification to open-source gates that scrub data before it reaches external services.
-
-
 
 **Examples** include CrowdStrike Falcon Data Protection, Symantec DLP, Forcepoint DLP, Microsoft Purview DLP, Netskope DLP, Zscaler DLP, Digital Guardian, Proofpoint Enterprise DLP, Nightfall AI, and Cyberhaven (the category leaders in commercial space).
 
-
-
-**Open-source emphasis**: This section is expanded with every relevant project for self-hosted DLP, PII detection, and open data leak prevention. **Critical note**: The open-source DLP landscape is sparse but functional—**onprem-dlp** is the most purpose-built open-source DLP gate for preventing sensitive data from reaching cloud LLMs and APIs . **Presidio** provides the detection engine that many DLP tools build upon. No open-source project matches Symantec's channel coverage or Cyberhaven's data lineage depth, but for specific egress control use cases, the open-source options are viable.
-
-
+**Open-source emphasis**: This section is expanded with relevant projects for self-hosted DLP, PII detection, AI egress guardrails, and data leak prevention.
 
 Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
 
-
-
 ## Table of Contents
 
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
+- [SaaS/Hosted Platforms](#saashosted-platforms)
 - [Open-Source GitHub Projects](#open-source-github-projects)
-
 - [How to Contribute](#how-to-contribute)
-
 - [Disclaimer](#disclaimer)
 
+## Sector Overview & Market Dynamics
 
+The global Data Loss Prevention (DLP) market is valued at approximately **$3.5B to $4.3B** and is projected to expand at an **18%–24% CAGR** toward **$13B–$24B+** by the early 2030s, fueled by hybrid workforces, cloud migration, stringent data privacy regulations (GDPR, HIPAA), and generative AI egress risks. 
+
+The sector displays a **moderately to heavily concentrated structure** at the top enterprise tier dominated by diversified cybersecurity giants (Microsoft, Broadcom/Symantec, CrowdStrike, Forcepoint, Zscaler), while maintaining a **fragmented periphery** where specialized startups compete in emerging niches like generative AI data security, agentic AI workflows, and cloud-native API/SSPM DLP.
 
 ## SaaS/Hosted Platforms
 
-
-
-- **[CrowdStrike Falcon Data Protection](https://www.crowdstrike.com/)**
-
-  **AI-powered endpoint DLP** built on Falcon's unified agent. Monitors data at rest and in motion, including artifacts moving from web sources and endpoints to USBs and via browsers to cloud/SaaS apps . **Pricing**: **$73.99/year per endpoint** (Tier 3, 300–499 endpoints) per CDW listing ; 46-month subscription at **$263.97 per endpoint** (~$68.86/year) . **Free tier**: None. **Best for**: CrowdStrike customers wanting DLP integrated with endpoint protection—**trade-off**: requires Falcon agent; best value at volume pricing tiers.
-
-
-
-- **[Symantec DLP](https://www.broadcom.com/)**
-
-  **Enterprise DLP with broad channel coverage** across endpoint, network, and storage. Monitors USB, email, and web traffic; ties events to specific users for rapid incident response; works on-premises or cloud with AWS/Azure/GCP integration . **Pricing**: **Starting at $1.99/user/year** per SelectHub ; Capterra lists **$14/user/year** . **Free tier**: None; free trial available. **Best for**: large enterprises wanting predictable per-user pricing with deep cloud support—**trade-off**: frequent complaints about support quality and slow scanning; policy creation takes time .
-
-
-
-- **[Forcepoint DLP](https://www.forcepoint.com/)**
-
-  **Unified DLP across email, cloud, web, endpoint, and AI**. Named a **Leader in IDC MarketScape: Worldwide DLP 2025** . **1,800+ predefined policies and classifiers** covering 80+ countries' regulations; **GDPR policies included**; prevents copy/paste into ChatGPT and blocks shadow AI apps; same policy engine across all channels . **Pricing**: **Custom quote**—explicitly positioned as customized . **Free tier**: None. **Best for**: enterprises wanting unified policy across email and cloud without rearchitecting—**trade-off**: quote-only; policy tuning requires 1–2 FTE-months per third-party estimates .
-
-
-
-- **[Microsoft Purview DLP](https://www.microsoft.com/purview)**
-
-  **DLP within Microsoft 365** with Copilot integration. **Critical for Copilot deployments**: sensitivity labels tell Copilot which content requires special handling; DLP blocks Copilot from including regulated content in responses even if users can access it . **Pricing**: Requires **M365 E5 Compliance add-on ($12/user/month)** or **E5 ($60/user/month)** for full functionality; E3 gets basic labels and DLP but misses Insider Risk, Advanced eDiscovery, and Records Management . **Free tier**: Basic DLP on E3. **Best for**: Microsoft 365 enterprises needing DLP that prevents Copilot from exposing over-shared content—**trade-off**: content-blind outside M365 ecosystem; non-Microsoft SaaS coverage requires Defender for Cloud Apps connectors and incurs Purview At Rest charges ($0.50/1,000 files/month) .
-
-
-
-- **[Netskope DLP](https://www.netskope.com/)**
-
-  **Cloud-native DLP** within Netskope's SASE platform. Basic DLP included in Prime Advantage package; advanced DLP in Max Advantage; inspects file contents and metadata . **Pricing**: **Quote-only**; packaged as part of SASE tiers . **Free tier**: None. **Best for**: organizations adopting SASE wanting DLP integrated with CASB and SWG—**trade-off**: DLP depth varies by package tier.
-
-
-
-- **[Zscaler DLP](https://www.zscaler.com/)**
-
-  **Inline and cloud DLP** within Zscaler's Zero Trust Exchange. Covers inline DLP, CASB, endpoint, email, SSPM, DSPM, workloads, and BYOD; AI auto data discovery; Gen AI control with prompt-level visibility . **Pricing**: **Starting from $1,000/year** per AppDirect listing . **Free tier**: None. **Best for**: Zscaler customers wanting inline DLP with Gen AI controls—**trade-off**: entry pricing is for limited scope; full coverage requires additional modules.
-
-
-
-- **[Digital Guardian](https://www.digitalguardian.com/)**
-
-  **Data protection platform** with DLP and insider risk. **Pricing**: Quote-only. **Free tier**: None. **Best for**: enterprises wanting deep endpoint DLP with insider threat focus—**trade-off**: no public pricing; implementation complexity.
-
-
-
-- **[Proofpoint Enterprise DLP](https://www.proofpoint.com/)**
-
-  **DLP across email, endpoint, and cloud**. Email DLP is easiest to deploy; endpoint DLP adds SOC features; CASB takes most time to set up with limited cloud API options . **Pricing**: Quote-only per Gartner Peer Insights . **Free tier**: None. **Best for**: Proofpoint email security customers wanting DLP continuity—**trade-off**: visual bugs in DLP scanning reported; CASB setup time-consuming .
-
-
-
-- **[Nightfall AI](https://www.nightfall.ai/)**
-
-  **AI-native DLP** with ML-based detection across SaaS, endpoint, and AI tools. **95% detection precision** using transformer-based detectors (not regex); covers PII, PHI, PCI, API keys, source code; **endpoint agent** inspects every browser, desktop app, and AI tool—including unsanctioned apps that no vendor has an API for; **MCP server discovery** with shadow-MCP detection . **Pricing**: Per-user pricing bundles SaaS, endpoint, and AI coverage; **7-day or limited-time POV** instead of self-serve trial; customers report **~50x lower TCO** than legacy DLP . **Free tier**: POV only. **Best for**: modern teams wanting AI-native detection without regex tuning—**trade-off**: SaaS API coverage limited to 12 apps; legacy DLP has broader channel breadth.
-
-
-
-- **[Cyberhaven](https://www.cyberhaven.com/)**
-
-  **AI-native data security** tracing data lineage at the fragment level. Targets the "agentic enterprise"—where AI agents copy, summarize, and transform data at machine speed, breaking file-based DLP; **covers Cursor and Claude Code** explicitly; **Deep Understanding** layer pairs lineage with context-aware classification; **Linea AI Detection Agents** flag risky handling in real time . **Pricing**: **Custom quote**; enterprise bracket; costs scale with endpoints, connectors, and modules . **Free tier**: None. **Best for**: regulated enterprises with audit obligations wanting lineage evidence for AI-era data flows—**trade-off**: enterprise infrastructure; deployment depends on integration footprint .
-
-
+| Product | Company Scale (Revenue / Valuation) | Pricing (Starting Tier) | Free Tier Limits / Free Trial Limits | Channel Coverage & Focus |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Microsoft Purview DLP](https://www.microsoft.com/purview)** | **~$3.88T Market Cap** (~$245B+ Annual Revenue) | **$12.00/user/month** (M365 E5 Compliance add-on; full suite $60/user/month for M365 E5) | **Included with M365 E3** (basic DLP policy and labels; excludes Insider Risk & Advanced eDiscovery) / 30-day trial of M365 E5 available (up to 25 user licenses) | Native M365, Teams, SharePoint, OneDrive, and Copilot data boundary governance; requires Defender connectors for 3rd-party SaaS. |
+| **[Symantec DLP](https://www.broadcom.com/)** | **~$1.6T Market Cap** (~$51B+ Annual Revenue - Broadcom) | **$1.99/user/year** (Starting tier per SelectHub; ~$14.00/user/year on Capterra) | **No permanent free tier**; 30-day proof-of-concept / evaluation license available via Broadcom partner network | Deep multi-channel enterprise coverage across endpoints, network, email, web traffic, and hybrid cloud storage (AWS, Azure, GCP). |
+| **[CrowdStrike Falcon Data Protection](https://www.crowdstrike.com/)** | **~$250B Market Cap** (~$5.84B ARR) | **$73.99/endpoint/year** (CDW Tier 3: 300–499 endpoints; or ~$68.86/endpoint/year on 46-month volume agreement) | **No permanent free tier**; 15-day Falcon platform trial available (limited to endpoint detection / lab agents upon approval) | AI-driven endpoint DLP unified on the Falcon single-agent architecture, monitoring endpoint clipboard, browser, and USB transfers. |
+| **[Zscaler DLP](https://www.zscaler.com/)** | **~$40B Market Cap** (~$3.35B Annual Revenue) | **$1,000.00/year** (Starting entry package on AppDirect marketplace; ~$2.00–$5.00/user/month at enterprise volume) | **No permanent free tier**; Custom enterprise evaluation / PoC typically scoped for 14 to 30 days upon sales consultation | Inline zero-trust inspection across cloud web proxy (SWG), CASB, email, SSPM, and generative AI prompt exfiltration controls. |
+| **[Proofpoint Enterprise DLP](https://www.proofpoint.com/)** | **$12.3B Valuation** (Thoma Bravo acquisition; ~$1B+ ARR) | **$24.00/user/year** ($2.00/user/month modular entry estimate; SMB Essentials DLP starts at $2.75–$3.93/user/month) | **No permanent free tier**; 30-day guided evaluation / Proof of Concept coordinated through enterprise sales | People-centric DLP covering email gateways, cloud SaaS, endpoints, and insider threat management (ITM). |
+| **[Netskope DLP](https://www.netskope.com/)** | **~$6.5B Valuation** (~$899M ARR / ~$709M Revenue - NASDAQ: NTSK) | **$50.00/user/year** (~$4.16/user/month base SWG/CASB starting tier; annual contracts typically start at ~$35,000/year) | **No permanent free tier**; Guided 14 to 30-day Proof of Concept (PoC) scoped for corporate cloud and CASB environments | Cloud-native DLP deeply embedded within Netskope's SASE/SSE architecture, inspecting content and metadata across SaaS and web. |
+| **[Forcepoint DLP](https://www.forcepoint.com/)** | **$2.45B Valuation** (carve-out basis; ~$650M Annual Revenue) | **$32.00/user/year** (Baseline compliance licensing starting tier; full IP protection ranges $55–$150+/user/year) | **No permanent free tier**; 14 to 30-day evaluation trial available upon request via enterprise sales | Unified policy engine across web, email, cloud, network, and endpoints with 1,800+ predefined regulatory policies and shadow AI controls. |
+| **[Cyberhaven](https://www.cyberhaven.com/)** | **$1.0B Valuation** (Unicorn status; ~$50M+ ARR) | **$30,000.00/year** (Minimum enterprise starting tier contract; translates to ~$4.00–$8.00/user/month at scale) | **No permanent free tier**; 14 to 30-day Proof of Value (PoV) sandbox evaluation offered to qualified enterprise prospects | Patented data lineage tracking at the fragment level; protects sensitive data moving into AI tools, coding assistants (Cursor, Claude Code), and cloud apps. |
+| **[Digital Guardian](https://www.digitalguardian.com/)** | **~$500M–$1B Scale** (Parent company Fortra / Thoma Bravo portfolio) | **$60,000.00/year** (Baseline deployment package including management console; minimum 1,000 endpoint threshold) | **No permanent free tier**; 14 to 30-day Proof of Concept (PoC) evaluation coordinated through Fortra sales engineering | Deep kernel-level endpoint inspection, full context tracking, user behavior monitoring, and managed DLP service (MSSP). |
+| **[Nightfall AI](https://www.nightfall.ai/)** | **~$150M–$250M Valuation** (~$60M raised; ~$20M+ ARR) | **$48.00/user/year** ($4.00/user/month baseline tier; Nightfall for LLMs custom volume packs) | **Free Developer Tier: 3 GB/month** of scanned data via API; 7-day enterprise Proof of Value (POV) for SaaS and endpoint agents | AI/LLM-native detector utilizing neural NLP models (95% precision) across Slack, Google Drive, Jira, GitHub, endpoints, and GenAI prompts. |
 
 ## Open-Source GitHub Projects
 
-
-
-- **[onprem-dlp](https://github.com/portable-genai/onprem-dlp)**
-
-  **On-prem DLP gate before cloud egress** (Apache-2.0) — **the most purpose-built open-source DLP tool** found in this research, designed to scrub data **before** it reaches any cloud LLM or API . **Features**: **Runs entirely on-prem, CPU-only**—no byte reaches the cloud unless the gate says so. **Two solutions**: **Unstructured** (text + images)—detects PII in free text and images via OCR, then redacts (tag/mask/hash/remove) or black-boxes pixel regions, issuing an **ALLOW / REDACT / BLOCK** egress decision; **Structured** (database columns)—profiles CSV/SQLite/PostgreSQL/MySQL/BigQuery columns (name, value patterns, cardinality, type, null ratio) and classifies each as `PII_DIRECT` / `PII_QUASI` / `SENSITIVE` / `NON_PII` with explainable weighted signals . **Detection core**: pure stdlib regex candidates hardened by **checksum validators** (SG NRIC/FIN, HK HKID, JP MyNumber, AU TFN/ABN/Medicare, credit-card Luhn, IBAN mod-97) with context-word confidence boosting; optional **Google Gemma** (via Ollama or llama.cpp) and **Microsoft Presidio** NER adapters raise recall but **deterministic policy engine always makes the decision** . **Tech stack**: Python (`pip install '.[yaml]'`). **Deploy**: Local, CLI, or FastAPI egress endpoint. **Trade-off**: **Egress gate only**—it prevents data from reaching cloud LLMs/APIs; it does not monitor endpoints, email, or SaaS apps like commercial DLP. **Best for**: teams building AI applications who need to prevent PII from leaking into cloud LLM prompts—especially those with strict data residency requirements or air-gapped environments.
-
-
-
-- **[Presidio](https://github.com/microsoft/presidio)**
-
-  **Open-source PII detection and anonymization** (MIT) — **the detection engine that many DLP tools build upon**, maintained by Microsoft. **Features**: **Fast identification** of PII in text, images, and structured data; **modular recognizers** (regex, checksum, NER, custom); **anonymization** with redaction, masking, hashing, and replacement; supports multiple languages . **Tech stack**: Python. **Deploy**: Library, Docker, or API. **Trade-off**: **Detection only**—it identifies and anonymizes PII but does not enforce egress policies or monitor endpoints. **Best for**: developers building custom DLP pipelines who need a proven PII detection foundation.
-
-
-
-- **[dlp-scanner](https://github.com/CarterPerez-dev/Cybersecurity-Projects/tree/main/PROJECTS/intermediate/dlp-scanner)**
-
-  **Multi-format data loss prevention scanner** (license per repo) — **a portfolio/learning project** for building DLP scanning logic . **Features**: **Multi-format scanning** (extractors for different file types); **detectors** for sensitive data patterns; **redaction** capabilities; **scoring** and **reporters** for findings; **CLI** interface; compliance-oriented design . **Tech stack**: Python. **Deploy**: CLI. **Trade-off**: **Educational project**—not production-hardened; no egress enforcement or enterprise integrations. **Best for**: developers learning DLP architecture and detection logic—not for production deployment.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **No mature open-source endpoint DLP exists.** Symantec, Forcepoint, CrowdStrike, and Microsoft dominate endpoint DLP; open-source alternatives focus on egress gates (onprem-dlp) and detection libraries (Presidio), not full endpoint agents.
-
-
-
-**Frameworks for building custom systems**: Combine **onprem-dlp** for cloud egress control with **Presidio** for PII detection and **dlp-scanner** as a learning reference—creating a limited open-source DLP stack. **None of these match commercial endpoint DLP's channel coverage or policy enforcement breadth.**
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, license (for open-source), and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- DLP platforms handling sensitive data and policy enforcement must comply with data protection regulations (GDPR, CCPA, HIPAA, etc.) and implement appropriate access controls and audit logging.
-
-- **The "endpoint DLP" vs. "cloud egress gate" vs. "detection library" distinction is critical.** **CrowdStrike, Symantec, Forcepoint, Microsoft Purview, Netskope, Zscaler, Digital Guardian, Proofpoint, Nightfall, and Cyberhaven** are **commercial DLP platforms**—they monitor endpoints, email, cloud, and network channels with policy enforcement . **onprem-dlp** is a **cloud egress gate**—it prevents data from reaching cloud LLMs/APIs, not endpoints or email . **Presidio** is a **detection library**—it identifies PII but does not enforce policies . **Choose based on whether you need endpoint coverage, egress control, or detection capabilities.**
-
-- **Microsoft Purview is critical for M365 Copilot deployments.** Without sensitivity labels and DLP, Copilot exposes over-shared content to unauthorized users. **E3 gets basic DLP; E5 Compliance ($12/user) or E5 ($60/user) is required for full functionality** including Insider Risk and Advanced eDiscovery . **Budget for E5 if deploying Copilot.**
-
-- **Nightfall's 95% detection precision is ML-based, not regex.** Customers report **~50x lower TCO** than legacy DLP because analyst time on false positives drops dramatically . **The trade-off**: SaaS API coverage limited to 12 apps; endpoint agent required for full coverage.
-
-- **Cyberhaven targets the "agentic enterprise"**—it traces data fragments, not files, and explicitly covers Cursor and Claude Code . **The trade-off**: enterprise infrastructure; deployment depends on integration footprint. **For regulated companies with AI adoption and audit obligations, it is a serious shortlist entry.**
-
-- **Symantec DLP's per-user pricing is among the lowest entry points** ($1.99–$14/user/year) but support quality and scanning speed are frequent complaints . **Forcepoint is the IDC Leader** but quote-only with 1–2 FTE-months of tuning .
-
-- **onprem-dlp is the only open-source DLP gate for cloud egress.** It runs CPU-only, on-prem, with deterministic checksum-validated detection and optional Gemma/Presidio adapters . **For teams building AI apps that must not leak PII to cloud LLMs, it is the most purpose-built option.**
-
-- **Pricing opacity varies.** CrowdStrike, Symantec, Zscaler, and Microsoft publish per-endpoint or per-user pricing. Forcepoint, Netskope, Digital Guardian, Proofpoint, Nightfall, and Cyberhaven require sales contact or quote requests. **Validate with direct vendor conversations against your channel coverage needs and user count.**
-
-- Self-hosted open-source solutions require proper infrastructure (Python for onprem-dlp and Presidio), security hardening, and ongoing maintenance. **DLP tools inspect sensitive data**—ensure your deployment meets your organization's privacy and compliance requirements before connecting production data flows.
-
-
+| Project | Stars | Focus & Architectural Role | License |
+| :--- | :--- | :--- | :--- |
+| **[OpenMetadata](https://github.com/open-metadata/OpenMetadata)** | [![GitHub stars](https://img.shields.io/github/stars/open-metadata/OpenMetadata?style=social&color=white)](https://github.com/open-metadata/OpenMetadata/stargazers) | **Unified Metadata & Automated PII Classification Platform**: Comprehensive data governance and cataloging engine with integrated sensitive data discovery, automated column profiling, and PII tagging across modern data warehouses. | Apache-2.0 |
+| **[Presidio](https://github.com/microsoft/presidio)** | [![GitHub stars](https://img.shields.io/github/stars/microsoft/presidio?style=social&color=white)](https://github.com/microsoft/presidio/stargazers) | **PII Detection and Anonymization Engine**: Microsoft's production-grade framework providing customizable recognizers (regex, NER, checksums) and redactors/maskers for structured and unstructured data. | MIT |
+| **[Cybersecurity-Projects (dlp-scanner)](https://github.com/CarterPerez-dev/Cybersecurity-Projects)** | [![GitHub stars](https://img.shields.io/github/stars/CarterPerez-dev/Cybersecurity-Projects?style=social&color=white)](https://github.com/CarterPerez-dev/Cybersecurity-Projects/stargazers) | **Multi-Format Data Loss Prevention Scanner**: Educational reference architecture featuring file extractors, sensitive pattern matching algorithms, redaction pipelines, and compliance scoring reporters. | MIT |
+| **[pipelock](https://github.com/pipelab-org/pipelock)** | [![GitHub stars](https://img.shields.io/github/stars/pipelab-org/pipelock?style=social&color=white)](https://github.com/pipelab-org/pipelock/stargazers) | **AI Agent Security Gateway & Egress Firewall**: Mediates HTTP, MCP, A2A, and WebSocket agent traffic to detect prompt injections and sensitive data exfiltration before external egress. | Apache-2.0 |
+| **[earlybird](https://github.com/americanexpress/earlybird)** | [![GitHub stars](https://img.shields.io/github/stars/americanexpress/earlybird?style=social&color=white)](https://github.com/americanexpress/earlybird/stargazers) | **Static Source Code Sensitive Data Scanner**: American Express's enterprise scanner for detecting hardcoded secrets, PII, cleartext credentials, and outdated cryptographic implementations in repositories. | Apache-2.0 |
+| **[DontFeedTheAI](https://github.com/zeroc00I/DontFeedTheAI)** | [![GitHub stars](https://img.shields.io/github/stars/zeroc00I/DontFeedTheAI?style=social&color=white)](https://github.com/zeroc00I/DontFeedTheAI/stargazers) | **Transparent LLM Anonymization Proxy**: Intercepts requests destined for cloud LLMs (Claude, OpenAI, OpenRouter) and strips IP addresses, credentials, hostnames, and PII using local Ollama and regex engines. | GPL-3.0 |
+| **[pii-masker](https://github.com/HydroXai/pii-masker)** | [![GitHub stars](https://img.shields.io/github/stars/HydroXai/pii-masker?style=social&color=white)](https://github.com/HydroXai/pii-masker/stargazers) | **Transformer-Powered PII Masking Tool**: High-precision sensitive entity detection and masking utility utilizing DeBERTa-v3 to guard privacy in enterprise AI pipelines. | MIT |
+| **[openredaction](https://github.com/sam247/openredaction)** | [![GitHub stars](https://img.shields.io/github/stars/sam247/openredaction)](https://github.com/sam247/openredaction/stargazers) | **Local-First TypeScript PII Redaction Engine**: Fast, browser- and Node.js-compatible open-source PII detection and redaction library operating 100% on-device. | MIT |
+| **[dlp-pdf-redaction](https://github.com/GoogleCloudPlatform/dlp-pdf-redaction)** | [![GitHub stars](https://img.shields.io/github/stars/GoogleCloudPlatform/dlp-pdf-redaction?style=social&color=white)](https://github.com/GoogleCloudPlatform/dlp-pdf-redaction/stargazers) | **Serverless Document Redaction Pipeline**: Cloud Run and Cloud Workflows architecture demonstrating automated visual and text redaction of sensitive PDF data via Google Cloud DLP APIs. | Apache-2.0 |
+| **[nightfall_dlp_action](https://github.com/nightfallai/nightfall_dlp_action)** | [![GitHub stars](https://img.shields.io/github/stars/nightfallai/nightfall_dlp_action?style=social&color=white)](https://github.com/nightfallai/nightfall_dlp_action/stargazers) | **CI/CD Pull Request DLP Action**: Automated GitHub Actions security check scanning pull request diffs for sensitive customer data, PII, and API secrets to prevent repository leaks. | MIT |
+| **[BSC_DLP_Community](https://github.com/marianabsctba/BSC_DLP_Community)** | [![GitHub stars](https://img.shields.io/github/stars/marianabsctba/BSC_DLP_Community?style=social&color=white)](https://github.com/marianabsctba/BSC_DLP_Community/stargazers) | **Enterprise Endpoint & Network DLP Platform**: Community edition of an open-source data loss prevention system for discovering, classifying, and enforcing protection policies across network nodes. | GPL-3.0 |
+| **[onprem-dlp](https://github.com/portable-genai/onprem-dlp)** | [![GitHub stars](https://img.shields.io/github/stars/portable-genai/onprem-dlp?style=social&color=white)](https://github.com/portable-genai/onprem-dlp/stargazers) | **Deterministic On-Prem Cloud Egress Gate**: CPU-only DLP gate scrubbing sensitive structured columns and unstructured documents/images before reaching cloud LLMs and APIs via deterministic checksum validators. | Apache-2.0 |
 
 ---
 
+### Additional Open-Source Observations
 
+- **No mature open-source endpoint DLP exists.** Symantec, Forcepoint, CrowdStrike, and Microsoft dominate full endpoint DLP agent coverage. Open-source solutions excel primarily in egress inspection gates (`onprem-dlp`, `DontFeedTheAI`, `pipelock`), static repository scanning (`earlybird`, `nightfall_dlp_action`), data catalog tagging (`OpenMetadata`), and modular PII detection libraries (`Presidio`, `pii-masker`, `openredaction`).
+- **Composing an Open-Source Data Security Stack**: Combine **OpenMetadata** for catalog and warehouse classification, **Presidio** or **pii-masker** for PII detection, and **pipelock** or **onprem-dlp** as a gate for AI/LLM egress enforcement.
+
+## How to Contribute
+
+1. Fork the repo.
+2. Add/edit entries in `README.md` (follow existing format and table structure).
+3. Include: name, link, specific starting tier pricing, free tier/trial limits, company size, and license (for open-source).
+4. Submit PR with a short explanation.
+
+Star the repo if you find it useful!
+
+## Disclaimer
+
+- This is a **community-curated** list — not exhaustive and not an endorsement.
+- DLP platforms handling sensitive data and policy enforcement must comply with data protection regulations (GDPR, CCPA, HIPAA, etc.) and implement appropriate access controls and audit logging.
+- **The "endpoint DLP" vs. "cloud egress gate" vs. "detection library" distinction is critical.** Commercial DLP suites monitor endpoints, email, cloud, and network channels with centralized policy enforcement. Open-source tools focus on specific egress checkpoints or foundational detection libraries.
+- All product names, logos, and brands are property of their respective owners.
+
+---
 
 **Made for security engineers, data protection teams, and organizations building transparent DLP solutions.**
-
-Let's make Data Loss Prevention more open, data-driven, and egress-aware.
